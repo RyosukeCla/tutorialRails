@@ -20,3 +20,14 @@ User.create!(name:  "Example User",
                password:              password,
                password_confirmation: password)
 end
+
+Micropost.create!(user_id: 1,
+                  content: "1234567890",)
+
+99.times do |n|
+  user_id = n + 1
+  10.times do |m|
+    content = "aiueo-#{n+1}-#{m+1}"
+    Micropost.create!(user_id: user_id, content: content)
+  end
+end
